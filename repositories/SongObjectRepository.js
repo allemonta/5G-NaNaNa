@@ -53,10 +53,15 @@ const addSong = (songData) => {
 
 
 // use the getSongById() method and, if exists, replace with the new songData value
-const updateSong = (id, songData) => {
-    songData.id = id
-
+const updateSong = (id, songUpdateData) => {
     const idx = getIndexById(id)
+
+    const songData = {
+        ...songs[idx],
+        ...songUpdateData,
+        id: id
+    }
+
     if (idx !== -1) {
         songs[idx] = songData
     }
