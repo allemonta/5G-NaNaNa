@@ -49,6 +49,7 @@ const getSongById = (id) => {
 const addSong = (songData) => {
     songData.id = randomId()
     songs.push(songData)
+    return songData
 }
 
 
